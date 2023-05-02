@@ -15,7 +15,6 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    image = ImageSerializer()
 
     class Meta:
         model = Category
@@ -24,7 +23,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class ServiceSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
-    images = ImageSerializer(many=True, read_only=True)
+    images = ImageSerializer(many=True)
 
     class Meta:
         model = Service

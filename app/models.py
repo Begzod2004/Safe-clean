@@ -2,7 +2,7 @@ from django.db import models
 
 
 
-class UnitOfMeasure(models.Model): # O'lchov birligi uchun9
+class UnitOfMeasure(models.Model): # O'lchov birligi uchun
     name = models.CharField(max_length=50)
     value = models.PositiveIntegerField()
     is_active = models.BooleanField(default=True)
@@ -13,7 +13,6 @@ class UnitOfMeasure(models.Model): # O'lchov birligi uchun9
 class Image(models.Model): 
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='media/picture/', blank=True, null=True)
-    # main_image true or false
     def __str__(self):
         return self.name
 
@@ -25,7 +24,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Service(models.Model):
     name = models.CharField(max_length=50)
